@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SpotifyApp</string>
+    <string name="title_popular_radios">Popüler Radyolar</string>
+    <string name="title_location_radios">Lokasyon Radyolar</string>
+
+    <string-array name="tabs">
+        <item>Radios</item>
+        <item>Favorite</item>
+    </string-array>
+</resources>
