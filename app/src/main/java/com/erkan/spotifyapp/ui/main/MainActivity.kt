@@ -2,6 +2,7 @@ package com.erkan.spotifyapp.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
 import com.erkan.spotifyapp.R
 import com.erkan.spotifyapp.main.MainPagerAdapter
@@ -20,5 +21,6 @@ class MainActivity : AppCompatActivity() {
         )
         viewPager.adapter = adapter
         tabLayout.setupWithViewPager(viewPager)
+        Log.d("msg","commit3 test")
     }
 }
