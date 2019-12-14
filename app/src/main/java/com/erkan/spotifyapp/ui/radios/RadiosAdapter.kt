@@ -33,9 +33,8 @@ class RadiosAdapter : RecyclerView.Adapter<RadiosAdapter.RadiosItemViewHolder>()
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Radio) {
-            binding.textViewRadioFrequency.text = item.band
-            binding.textViewRadioName.text = item.radioName
-            Picasso.get().load(item.logo_small).into(binding.imageViewRadio)
+            binding.viewState=RadiosItemViewState(item)
+
         }
 
         companion object {

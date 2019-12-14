@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="viewState"
             type="com.erkan.spotifyapp.ui.radios.RadiosFragmentViewState" />
@@ -13,25 +14,32 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidLine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewPopular"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/title_popular_radios"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidLine"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginRight="10dp"
             android:id="@+id/recyclerPopular"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidLine"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewPopular" />
 
@@ -40,43 +48,43 @@
             android:id="@+id/progressBarPopular"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:visibility="@{viewState.popularRadiosLoadingVisibility}"
             app:layout_constraintBottom_toBottomOf="@id/recyclerPopular"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidLine"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textViewPopular"                android:visibility="@{viewState.popularRadiosLoadingVisibility}" />
-
+            app:layout_constraintTop_toTopOf="@id/textViewPopular" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewLocation"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/title_location_radios"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerPopular" />
+            app:layout_constraintStart_toStartOf="@id/guidLine"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerLocation"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guidLine"
             app:layout_constraintTop_toBottomOf="@+id/textViewLocation" />
 
         <ProgressBar
             android:id="@+id/progressBarLocation"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:visibility="@{viewState.locationRadiosLoadingVisibility}"
             app:layout_constraintBottom_toBottomOf="@id/recyclerLocation"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/textViewLocation"                 android:visibility="@{viewState.locationRadiosLoadingVisibility}" />
-
+            app:layout_constraintStart_toStartOf="@id/guidLine"
+            app:layout_constraintTop_toTopOf="@id/textViewLocation" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
